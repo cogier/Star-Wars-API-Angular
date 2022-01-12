@@ -1,0 +1,9 @@
+<ol *ngIf="people$ | async as people; else loading">
+    <li *ngFor="let person of people.results">
+        <a [routerLink]="['planet', person.homeworld | toId]">{{ person.name }}</a>
+    </li>
+</ol>
+
+<ng-template #loading>
+    <p>Fetching Star Wars People</p>
+</ng-template>
