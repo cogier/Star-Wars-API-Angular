@@ -1,5 +1,46 @@
 <ol *ngIf="planet$ | async as planet; else loading">
     {{planet.name}}
+    <table>
+        <tr>
+            <th colspan="3">Information</th>
+        </tr>
+        <tr>
+            <td>Diameter</td>
+            <td>{{planet.diameter}} km</td>
+        </tr>
+        <tr>
+            <td>Rotateion Period</td>
+            <td>{{planet.rotation_period}} Hours</td>
+        </tr>
+        <tr>
+            <td>Orbital Period</td>
+            <td>{{planet.orbital_period}} Days</td>
+        </tr>
+        <tr>
+            <td>Population</td>
+            <td>{{planet.population}}</td>
+        </tr>
+        <tr>
+            <td>Climate</td>
+            <td>{{planet.climate}}</td>
+        </tr>
+        <tr>
+            <td>Terrain</td>
+            <td>{{planet.terrain}}</td>
+        </tr>
+        <tr>
+            <td>Surface Water %</td>
+            <td>{{planet.surface_water}}%</td>
+        </tr>
+    </table>
+
+    <div>
+        {{"Residents"}}
+    </div>
+
+    <div>
+        {{"Films"}}
+    </div>
 </ol>
 
 <ng-template #loading>
