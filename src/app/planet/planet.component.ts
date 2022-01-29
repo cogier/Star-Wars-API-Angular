@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StarWarsService } from '../core/star-wars.service';
 
@@ -8,9 +9,9 @@ import { StarWarsService } from '../core/star-wars.service';
     styleUrls: ['./planet.component.scss'],
 })
 export class PlanetComponent {
-    people$: Observable<Paged<Person>>;
+    planet$: Observable<Planet>;
 
-    constructor(private readonly sw: StarWarsService) {
-        this.people$ = this.sw.listPeople();
+    constructor(private readonly sw: StarWarsService, private readonly route: ActivatedRoute) {
+        this.planet$ = this.sw.getPlanetById(Number(this.route.snapshot.paramMap.get('id')));
     }
 }

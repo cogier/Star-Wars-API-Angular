@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToIdPipe } from './core/pipes/to-id.pipe';
 import { PeopleComponent } from './people/people.component';
+import { PlanetComponent } from './planet/planet.component';
 
 @NgModule({
-    declarations: [AppComponent, PeopleComponent, ToIdPipe],
+    declarations: [AppComponent, PeopleComponent, ToIdPipe, PlanetComponent],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     bootstrap: [AppComponent],
 })

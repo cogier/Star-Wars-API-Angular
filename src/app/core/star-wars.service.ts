@@ -11,4 +11,8 @@ export class StarWarsService {
     listPeople(): Observable<Paged<Person>> {
         return this.http.get<Paged<Person>>('https://swapi.dev/api/people');
     }
+
+    getPlanetById(id: number): Observable<Planet> {
+        return this.http.get<Planet>('https://swapi.dev/api/planets/'+id);
+    }
 }

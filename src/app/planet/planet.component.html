@@ -1,7 +1,7 @@
-<div>
-    TEST
-</div>
+<ol *ngIf="planet$ | async as planet; else loading">
+    {{planet.name}}
+</ol>
 
 <ng-template #loading>
-    <p>Fetching Star Wars People</p>
+    <p>Fetching Planet</p>
 </ng-template>
