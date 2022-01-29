@@ -1,5 +1,7 @@
-<ol *ngIf="planet$ | async as planet; else loading">
-    {{planet.name}}
+<div *ngIf="planet$ | async as planet; else loading">
+    <h1>
+        {{planet.name}}
+    </h1>
     <table>
         <tr>
             <th colspan="3">Information</th>
@@ -9,7 +11,7 @@
             <td>{{planet.diameter}} km</td>
         </tr>
         <tr>
-            <td>Rotateion Period</td>
+            <td>Rotation Period</td>
             <td>{{planet.rotation_period}} Hours</td>
         </tr>
         <tr>
@@ -41,7 +43,7 @@
     <div>
         {{"Films"}}
     </div>
-</ol>
+</div>
 
 <ng-template #loading>
     <p>Fetching Planet</p>
