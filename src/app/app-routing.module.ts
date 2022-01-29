@@ -9,7 +9,7 @@ const routes: Routes = [
         component: PeopleComponent,
     },
     {
-        path: 'test',
+        path: 'planet/:id',
         component: PlanetComponent,
     }
 ];
