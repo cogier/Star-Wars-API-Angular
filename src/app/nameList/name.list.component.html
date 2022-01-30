@@ -1,9 +1,12 @@
-<h3 *ngIf="items.length > 0">{{title}}</h3>
-<div *ngFor="let item$ of items">
-	<li *ngIf="item$ | async as item; else loading">
-		{{item.name || item.title}}
-	</li>
+<div *ngIf="items.length > 0" id="center-column">
+	<h3 id="list-title">{{title}}</h3>
+	<div *ngFor="let item$ of items" id="list-item">
+		<li *ngIf="item$ | async as item; else loading">
+			{{item.name || item.title}}
+		</li>
+	</div>
 </div>
+
 
 <ng-template #loading>
     <li>{{loadingText}}</li>

@@ -1,56 +1,60 @@
-<div *ngIf="planet$ | async as planet; else loading">
+<div *ngIf="planet$ | async as planet; else loading" id="planet">
     <h1>
         {{planet.name}}
     </h1>
-    <table>
-        <tr>
-            <th colspan="3">Planetary Facts</th>
-        </tr>
-        <tr>
-            <td>Diameter</td>
-            <td>{{planet.diameter | addType: "km"}}</td>
-        </tr>
-        <tr>
-            <td>Rotation Period</td>
-            <td>{{planet.rotation_period | addType: "Hours"}}</td>
-        </tr>
-        <tr>
-            <td>Orbital Period</td>
-            <td>{{planet.orbital_period | addType: "Days"}}</td>
-        </tr>
-        <tr>
-            <td>Population</td>
-            <td>{{planet.population}}</td>
-        </tr>
-        <tr>
-            <td>Climate</td>
-            <td>{{planet.climate}}</td>
-        </tr>
-        <tr>
-            <td>Terrain</td>
-            <td>{{planet.terrain}}</td>
-        </tr>
-        <tr>
-            <td>Surface Water %</td>
-            <td>{{planet.surface_water | addType: "%"}}</td>
-        </tr>
-    </table>
-
-    <app-name-list
-        [title]= "'Notable Residents'"
-        [loadingText]="'Fetching Person'"
-        [urls]="planet.residents"
-        [source]="'person'"
-    >
-    </app-name-list>
-
-    <app-name-list
-        [title]= "'Appearances in Films'"
-        [loadingText]="'Fetching Film Title'"
-        [urls]="planet.films"
-        [source]="'film'"
-    >
-    </app-name-list>
+    <div>
+        <table id="center-table">
+            <tr>
+                <th colspan="3">Planetary Facts</th>
+            </tr>
+            <tr>
+                <td>Diameter</td>
+                <td>{{planet.diameter | addType: "km"}}</td>
+            </tr>
+            <tr>
+                <td>Rotation Period</td>
+                <td>{{planet.rotation_period | addType: "Hours"}}</td>
+            </tr>
+            <tr>
+                <td>Orbital Period</td>
+                <td>{{planet.orbital_period | addType: "Days"}}</td>
+            </tr>
+            <tr>
+                <td>Population</td>
+                <td>{{planet.population}}</td>
+            </tr>
+            <tr>
+                <td>Climate</td>
+                <td>{{planet.climate}}</td>
+            </tr>
+            <tr>
+                <td>Terrain</td>
+                <td>{{planet.terrain}}</td>
+            </tr>
+            <tr>
+                <td>Surface Water %</td>
+                <td>{{planet.surface_water | addType: "%"}}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="planet-lists">
+        <app-name-list
+            [title]= "'Notable Residents'"
+            [loadingText]="'Fetching Person'"
+            [urls]="planet.residents"
+            [source]="'person'"
+        >
+        </app-name-list>
+    
+        <app-name-list
+            [title]= "'Appearances in Films'"
+            [loadingText]="'Fetching Film Title'"
+            [urls]="planet.films"
+            [source]="'film'"
+        >
+        </app-name-list>
+    </div>
 
 </div>
 

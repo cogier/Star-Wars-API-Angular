@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+h1 {
+	text-align: center;
+}
+
+#center-table {
+	margin: auto;
+}
+
+#center-column {
+	text-align: center;
+	margin: auto;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 30%;
+}
+
+th, td {
+	border: 1px solid #000000;
+	padding: 8px;
+}
+
+th {
+	text-align: center;
+}
+  
+td {
+	text-align: left;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#planet-lists {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+#list-title {
+	padding-top: 20px;
+}
+
+#list-item {
+	text-align: left;
+}
