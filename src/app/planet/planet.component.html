@@ -8,15 +8,15 @@
         </tr>
         <tr>
             <td>Diameter</td>
-            <td>{{planet.diameter}} km</td>
+            <td>{{planet.diameter | addType: "km"}}</td>
         </tr>
         <tr>
             <td>Rotation Period</td>
-            <td>{{planet.rotation_period}} Hours</td>
+            <td>{{planet.rotation_period | addType: "Hours"}}</td>
         </tr>
         <tr>
             <td>Orbital Period</td>
-            <td>{{planet.orbital_period}} Days</td>
+            <td>{{planet.orbital_period | addType: "Days"}}</td>
         </tr>
         <tr>
             <td>Population</td>
@@ -32,19 +32,21 @@
         </tr>
         <tr>
             <td>Surface Water %</td>
-            <td>{{planet.surface_water}}%</td>
+            <td>{{planet.surface_water | addType: "%"}}</td>
         </tr>
     </table>
 
-    <h3>Notable Residents</h3>
     <app-name-list
+        [title]= "'Notable Residents'"
+        [loadingText]="'Fetching Person'"
         [urls]="planet.residents"
         [source]="'person'"
     >
     </app-name-list>
 
-    <h3>Appearances in Films</h3>
     <app-name-list
+        [title]= "'Appearances in Films'"
+        [loadingText]="'Fetching Film Title'"
         [urls]="planet.films"
         [source]="'film'"
     >

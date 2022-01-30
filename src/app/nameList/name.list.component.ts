@@ -9,6 +9,8 @@ import { StarWarsService } from '../core/star-wars.service';
     //styleUrls: ['./planet.component.scss'],
 })
 export class NameListComponent {
+	@Input() title!: string;
+	@Input() loadingText!: string;
 	@Input() urls!: string[];
 	@Input() source!: "person" | "film";
 
