@@ -1,3 +1,4 @@
+<h3>Select a character to learn about their homeworld.</h3>
 <ol *ngIf="people$ | async as people; else loading">
     <li *ngFor="let person of people.results">
         <a [routerLink]="['planet', person.homeworld | toId]">{{ person.name }}</a>

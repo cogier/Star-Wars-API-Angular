@@ -6,7 +6,6 @@ import { StarWarsService } from '../core/star-wars.service';
 @Component({
     selector: 'app-name-list',
     templateUrl: './name.list.component.html',
-    //styleUrls: ['./planet.component.scss'],
 })
 export class NameListComponent {
 	@Input() title!: string;

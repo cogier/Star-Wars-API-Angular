@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class AddTypePipe implements PipeTransform {
     transform(value: string, type: string): string {
         if (value === "unknown" || value === "0") {
-            return value;
+            return "unknown";
         }
         else {
             return value + " " + type;
