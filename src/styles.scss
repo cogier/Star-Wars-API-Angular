@@ -32,14 +32,22 @@ td {
 	text-align: left;
 }
 
+// Alternating table row colors
 tr:nth-child(even) {
 	background-color: #dddddd;
+}
+
+// Second column of table has right aligned text
+td:nth-child(2) {
+	text-align: right;
 }
 
 #planet-lists {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+	width: 70%;
+	margin: auto;
 }
 
 #list-title {

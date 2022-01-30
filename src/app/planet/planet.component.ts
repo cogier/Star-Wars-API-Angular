@@ -6,11 +6,9 @@ import { StarWarsService } from '../core/star-wars.service';
 @Component({
     selector: 'app-planet',
     templateUrl: './planet.component.html',
-    styleUrls: ['./planet.component.scss'],
 })
 export class PlanetComponent {
     planet$: Observable<Planet>;
-    residents$: Observable<Person>[] = [];
 
     constructor(private readonly sw: StarWarsService, private readonly route: ActivatedRoute) {
         this.planet$ = this.sw.getPlanetById(Number(this.route.snapshot.paramMap.get('id')));
