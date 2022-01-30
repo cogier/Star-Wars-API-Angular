@@ -1,9 +1,9 @@
-<div *ngFor="let person$ of people">
-	<li *ngIf="person$ | async as person">
-		{{person.name}}
+<div *ngFor="let item$ of items">
+	<li *ngIf="item$ | async as item; else loading">
+		{{item.name || item.title}}
 	</li>
 </div>
 
 <ng-template #loading>
-    <p>Fetching Person</p>
+    Fetching Person
 </ng-template>

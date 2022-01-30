@@ -37,14 +37,18 @@
     </table>
 
     <h3>Notable Residents</h3>
-    <app-name-list [urls]="planet.residents"></app-name-list>
+    <app-name-list
+        [urls]="planet.residents"
+        [source]="'person'"
+    >
+    </app-name-list>
 
     <h3>Appearances in Films</h3>
-    <ol>
-        <li *ngFor="let film of planet.films">
-            <a [routerLink]="[film]">{{ film }}</a>
-        </li>
-    </ol>
+    <app-name-list
+        [urls]="planet.films"
+        [source]="'film'"
+    >
+    </app-name-list>
 
 </div>
 

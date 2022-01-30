@@ -10,8 +10,9 @@ import { StarWarsService } from '../core/star-wars.service';
 })
 export class NameListComponent {
 	@Input() urls!: string[];
+	@Input() source!: "person" | "film";
 
-	people: Observable<Person>[] = [];
+	items: Observable<any>[] = [];
 
     constructor(private readonly sw: StarWarsService) {}
 
@@ -19,8 +20,17 @@ export class NameListComponent {
 		const ids = this.urls.map(url => {
 			return getIdFromUrl(url);
 		});
-		ids.forEach(id => {
-			this.people.push(this.sw.getPersonById(id));
-		});
+		switch (this.source) {
+			case "person":
+				ids.forEach(id => {
+					this.items.push(this.sw.getPersonById(id));
+				});
+				break;
+			case "film":
+				ids.forEach(id => {
+					this.items.push(this.sw.getFilmById(id));
+				});
+				break;
+		}
 	}
 }
