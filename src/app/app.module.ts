@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToIdPipe } from './core/pipes/to-id.pipe';
+import { NameListComponent } from './nameList/name.list.component';
 import { PeopleComponent } from './people/people.component';
 import { PlanetComponent } from './planet/planet.component';
 
 @NgModule({
-    declarations: [AppComponent, PeopleComponent, ToIdPipe, PlanetComponent],
+    declarations: [AppComponent, PeopleComponent, ToIdPipe, PlanetComponent, NameListComponent],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     bootstrap: [AppComponent],
 })

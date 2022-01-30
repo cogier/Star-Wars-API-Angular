@@ -15,4 +15,9 @@ export class StarWarsService {
     getPlanetById(id: number): Observable<Planet> {
         return this.http.get<Planet>('https://swapi.dev/api/planets/'+id);
     }
+
+    getPersonById(id: number): Observable<Person> {
+        console.log('https://swapi.dev/api/people/'+id);
+        return this.http.get<Person>('https://swapi.dev/api/people/'+id);
+    }
 }

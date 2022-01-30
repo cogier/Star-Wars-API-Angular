@@ -4,7 +4,7 @@
     </h1>
     <table>
         <tr>
-            <th colspan="3">Information</th>
+            <th colspan="3">Planetary Facts</th>
         </tr>
         <tr>
             <td>Diameter</td>
@@ -36,13 +36,25 @@
         </tr>
     </table>
 
-    <div>
-        {{"Residents"}}
-    </div>
+    <h3>Notable Residents</h3>
+    <ol>
+        <li *ngFor="let resident of planet.residents">
+            <a [routerLink]="[resident]">{{ resident }}</a>
+        </li>
+    </ol>
+    <!-- <ol>
+        <li *ngFor="let resident of planet.residents">
+            <app-name-list [id]="resident"></app-name-list>
+        </li>
+    </ol> -->
 
-    <div>
-        {{"Films"}}
-    </div>
+    <h3>Appearances in Films</h3>
+    <ol>
+        <li *ngFor="let film of planet.films">
+            <a [routerLink]="[film]">{{ film }}</a>
+        </li>
+    </ol>
+
 </div>
 
 <ng-template #loading>
