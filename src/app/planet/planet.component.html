@@ -37,11 +37,7 @@
     </table>
 
     <h3>Notable Residents</h3>
-    <ol>
-        <li *ngFor="let resident of planet.residents">
-            <app-name-list [id]="resident | toId"></app-name-list>
-        </li>
-    </ol>
+    <app-name-list [urls]="planet.residents"></app-name-list>
 
     <h3>Appearances in Films</h3>
     <ol>

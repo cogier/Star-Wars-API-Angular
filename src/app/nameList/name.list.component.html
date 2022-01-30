@@ -1,5 +1,7 @@
-<div *ngIf="person$ | async as person; else loading">
-	{{ person.name }}
+<div *ngFor="let person$ of people">
+	<li *ngIf="person$ | async as person">
+		{{person.name}}
+	</li>
 </div>
 
 <ng-template #loading>

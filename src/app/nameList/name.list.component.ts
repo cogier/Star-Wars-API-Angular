@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
+import { getIdFromUrl } from '../core/pipes/to-id.pipe';
 import { StarWarsService } from '../core/star-wars.service';
 
 @Component({
@@ -8,14 +9,18 @@ import { StarWarsService } from '../core/star-wars.service';
     //styleUrls: ['./planet.component.scss'],
 })
 export class NameListComponent {
-	@Input() id!: number;
-	
-	person$: Observable<Person> | undefined;
+	@Input() urls!: string[];
+
+	people: Observable<Person>[] = [];
 
     constructor(private readonly sw: StarWarsService) {}
 
 	ngOnInit() {
-		console.log('ID is: ', this.id);
-		this.person$ = this.sw.getPersonById(this.id);
+		const ids = this.urls.map(url => {
+			return getIdFromUrl(url);
+		});
+		ids.forEach(id => {
+			this.people.push(this.sw.getPersonById(id));
+		});
 	}
 }
