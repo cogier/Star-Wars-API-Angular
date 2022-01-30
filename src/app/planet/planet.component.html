@@ -39,14 +39,9 @@
     <h3>Notable Residents</h3>
     <ol>
         <li *ngFor="let resident of planet.residents">
-            <a [routerLink]="[resident]">{{ resident }}</a>
+            <app-name-list [id]="resident | toId"></app-name-list>
         </li>
     </ol>
-    <!-- <ol>
-        <li *ngFor="let resident of planet.residents">
-            <app-name-list [id]="resident"></app-name-list>
-        </li>
-    </ol> -->
 
     <h3>Appearances in Films</h3>
     <ol>

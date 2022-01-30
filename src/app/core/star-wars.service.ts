@@ -17,7 +17,10 @@ export class StarWarsService {
     }
 
     getPersonById(id: number): Observable<Person> {
-        console.log('https://swapi.dev/api/people/'+id);
         return this.http.get<Person>('https://swapi.dev/api/people/'+id);
+    }
+
+    getFilmById(id: number): Observable<Person> {
+        return this.http.get<Person>('https://swapi.dev/api/films/'+id);
     }
 }
