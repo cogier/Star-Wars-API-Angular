@@ -1,5 +1,5 @@
-<div *ngIf="planet$ | async as planet; else loading" id="planet">
-    <h1>
+<div *ngIf="planet$ | async as planet; else loading">
+    <h1 id="page-title">
         {{planet.name}}
     </h1>
     <div>

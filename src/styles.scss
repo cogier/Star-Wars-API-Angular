@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-h1 {
+#page-title {
 	text-align: center;
 }
 
@@ -10,6 +10,11 @@ h1 {
 
 #center-column {
 	text-align: center;
+	margin: auto;
+}
+
+#people-column {
+	width: 30%;
 	margin: auto;
 }
 
